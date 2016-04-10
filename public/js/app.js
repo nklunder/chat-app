@@ -1,4 +1,5 @@
-var socket = io();
+var socket = io(),
+    chatInput = document.getElementById('chat-input');
 
 function updateScroll(el) {
   /**
@@ -14,10 +15,10 @@ function updateScroll(el) {
   }
 }
 
-$('#chat-input').submit(function (evt) {
+chatInput.addEventListener('submit', function (evt) {
   evt.preventDefault();
 
-  var msg = $('#msg').val();
+  var msg = evt.target.msg.value;
 
   /**
    * RegExp to check for at least one non-whitespace character.
@@ -30,7 +31,7 @@ $('#chat-input').submit(function (evt) {
   socket.emit('chat message', msg);
 
   // clear text input
-  $('#msg').val('');
+  evt.target.msg.value = '';
 });
 
 socket.on('chat message', function (msg) {
