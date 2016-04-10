@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  height: 100vh;
+  font-family: Helvetica, sans-serif;
+  background-color: orange;
+}
+
+header {
+  background-color: dodgerblue;
+  color: white;
+  padding: .5rem;
+}
+
+#chat-main-ui {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+#chat-user-list {
+  background-color: pink;
+  width: 10rem;
+}
+
+#chat-messages {
+  flex: 1;
+  background-color: cornflowerblue;
+}
+
+#message-list {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+#chat-input {
+  flex: 0 0 auto;
+  padding: 3em;
+  background-color: lime;
+}
